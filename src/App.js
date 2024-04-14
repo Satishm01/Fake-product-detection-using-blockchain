@@ -10,6 +10,12 @@ import Home from './components/Home';
 import VerifyProduct from './components/VerifyProduct';
 import AddProduct from './components/AddProduct';
 import GetContract from './components/GetContract'
+import GstValidate from './components/GstValidate';
+import Signin from './components/Signin'
+import Signup from './components/Signup';
+import Signup2 from './components/Signup2'
+import Manufacturer from './components/Manufacturer'
+
 
 // ABIs
 import CentralABI from './abis/Cental_ABI.json';
@@ -68,6 +74,7 @@ function App() {
           path="/createcontract" 
           element = {<DeployContract  account={account} provider={provider} central={central} />}
         />
+
         <Route 
           path="/getcontract" 
           element = {<GetContract  account={account} provider={provider} central={central} />}
@@ -81,6 +88,21 @@ function App() {
           path="/verify" 
           element = {<VerifyProduct  account={account} provider={provider} central={central} />}
         />
+
+        <Route path="/gstvalidate" element={<GstValidate />} />
+
+        <Route path="/Signin" element={<Signin />} />
+
+        <Route path="/Signup" element={<Signup />} />
+
+        <Route path="/Signup2" element={<Signup2 />} />
+
+        <Route path="/Manufacturer" element={<Manufacturer />} />
+
+
+        <Route path="/GstValidate" element={<GstValidate />} />
+
+
       </Routes>
     </Router>
   );
@@ -89,3 +111,9 @@ function App() {
 
 
 export default App;
+
+
+
+
+
+

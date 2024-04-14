@@ -35,6 +35,23 @@ const Navigation = ({ account, setAccount }) => {
                     <li className='nav__item'>
                         <Link className='nav__link' to="/">Home</Link>
                     </li>
+
+                    <li className='nav__item'>
+                        <Link className='nav__link' to="Signin">Manufacturer</Link>
+                    </li>
+
+
+                    <li className='nav__item'>
+                        <Link className='nav__link' to="GstValidate">signup</Link>
+                    </li>
+
+
+                    <li className='nav__item'>
+                        <Link className='nav__link' to="Signup2">signup2</Link>
+                    </li>
+
+
+
                     <li className='nav__item'>
                         <Link className='nav__link' to="createcontract">CreateContract</Link>
                     </li>

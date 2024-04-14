@@ -4,12 +4,23 @@ import React, {useState, useRef} from 'react'
 // import QRCode from "qrcode";
 import QrScanner from 'qr-scanner';
 
+// import QrReader from 'react-qr-reader';
+
+// import  { Component } from 'react';
+
+
+
 const VerifyProduct = ({ provider, central }) => {
 
     const [companyContractAddress, setCompanyContractAddress] = useState('');
     const [productId, setProductId] = useState('');
 
     const [productStatus, setProductStatus] = useState(null);
+
+
+    // const [showPopup, setShowPopup] = useState(false);
+
+
     //const [scannedData, setScannedData] = useState(null);
 
     // const handleScan = (data) => {
@@ -61,6 +72,11 @@ const VerifyProduct = ({ provider, central }) => {
         setData(result);
     };
 
+    // const showCounterfeitPopup = () => {
+    //     alert('The scanned product is counterfeit.');
+    // };
+
+
     
 
     return (
@@ -100,10 +116,17 @@ const VerifyProduct = ({ provider, central }) => {
 
                 <button className='button__toggle form__button' onClick={checkProduct}>Verify</button>
                 {productStatus && <p>Result: {productStatus}</p>}
+
+
             </div>
+
+            
+
         </div>
     )
 }
+
+//Extra
 
 // class QrContainer extends Component {
 //     constructor(props){
@@ -159,3 +182,4 @@ const VerifyProduct = ({ provider, central }) => {
 // }
 
 export default VerifyProduct;
+
