@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ethers } from 'ethers'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 
@@ -15,7 +16,6 @@ import Signin from './components/Signin'
 import Signup from './components/Signup';
 import Signup2 from './components/Signup2'
 import Manufacturer from './components/Manufacturer'
-
 
 // ABIs
 import CentralABI from './abis/Cental_ABI.json';

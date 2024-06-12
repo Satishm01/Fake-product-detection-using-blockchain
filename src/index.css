@@ -9,8 +9,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #e5f0ff; /* Light blue background color */
-  background-image: url('images1.jpg'); /* Replace 'your-background-image.jpg' with the path to your image */
+  background-color: #32373f; /* Light blue background color */
+   background-image: url('images.jpeg'); /*Replace 'your-background-image.jpg' with the path to your image */
   background-size: cover; /* Ensure the background image covers the entire screen */
   background-position: center; /* Center the background image */
 }

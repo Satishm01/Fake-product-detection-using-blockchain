@@ -1,5 +1,7 @@
 import { useState, useRef } from "react";
 import { QRCodeCanvas } from "qrcode.react";
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './app.css';
 
 const AddProduct = ({account, central}) => {
@@ -13,6 +15,7 @@ const AddProduct = ({account, central}) => {
     const [loading, setLoading] = useState(false);
 
     const [updateStatus, setUpdateStatus] = useState(false);
+    const navigate=useNavigate()
     
     function showErrorMessage(error) {
         setLoading(false);
@@ -68,9 +71,12 @@ const AddProduct = ({account, central}) => {
           />
         );
 
-
-    const addProducts = async () => {
+        
+        
+    const addProducts = async (e) => {
+        e.preventDefault();
         try{
+            
             const list = JSON.parse("[" + productId + "]");
             if(account && companyContractAddress && list){
                 setUpdateStatus("Validate the transaction through your wallet");
@@ -78,6 +84,8 @@ const AddProduct = ({account, central}) => {
                 setLoading(true);
                 await transaction.wait();
                 setUpdateStatus("Products Added");
+               
+                
                 setLoading(false);
             }else{
                 throw Error('Please check that you are connected to a wallet,and that you have provided all the fields');
@@ -90,12 +98,41 @@ const AddProduct = ({account, central}) => {
     }
 
 
-        
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const formData = {
+                companyContractAddress,
+                productId,
+                manufactureId,
+                productName,
+                productBrand
+            };
+
+            const response = await axios.post('http://localhost:3001/addproduct', formData);
+            console.log(response.data);
+
+            setUpdateStatus("Products Added");
+            setLoading(false);
+
+        } catch (error) {
+            console.error('Error adding product:', error);
+            setUpdateStatus("Error adding product");
+            setLoading(false);
+            // Handle error as needed
+        }
+    };
+
+
+    const handleAddProduct = (e) => {
+        addProducts(e); // Call addProducts function
+        handleSubmit(e); // Call handleSubmit function
+    };
 
     return (
         <div className='AddProduct'>
-            <h3 className='Component__title'>Add Products</h3>
+            <h3 className='Component__title' style={{ fontSize: "40px" ,color:"violet"}}>Add Products</h3>
             <div className='Component__form'>
                 <div className='form__content'>
                     <label className='form__label'>Enter Company contract address</label>

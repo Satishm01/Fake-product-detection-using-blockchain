@@ -27,23 +27,21 @@ const SignUp = () => {
     }
     
   return (
-    <div className=' d-flex justify-content-center align-items-center bg-secondary vh-100'>
-        <div className="bg-white p-3 rounded w-25">
-        <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-        <label htmlFor="companyName">
-        <strong>Company Name</strong>
-        </label>
-        <input 
-      type="text"
-      placeholder="Enter Company Name"
-      autoComplete="off"
-      name="companyName"
-      className="form-control rounded-0"
-      onChange={(e) => setCompanyName(e.target.value)}
-    />
-  </div>
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+    <div style={{ backgroundColor: "#f4f4f4", padding: "20px", borderRadius: "8px", width: "300px" }}>
+        <h2 style={{ textAlign: "center", color: "black" }}>Register</h2>
+        <form onSubmit={handleSubmit}>
+            <div style={{ marginBottom: "10px" }}>
+                <label htmlFor="companyName"><strong>Company Name</strong></label>
+                <input 
+                    type="text"
+                    placeholder="Enter Company Name"
+                    autoComplete="off"
+                    name="companyName"
+                    style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "1px solid #ccc" }}
+                    onChange={(e) => setCompanyName(e.target.value)}
+                />
+            </div>
 
   <div className="mb-3">
     <label htmlFor="stateLocation">
