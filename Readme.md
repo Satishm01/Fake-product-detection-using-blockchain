@@ -1,29 +1,28 @@
 ## 🤔 Getting Started :
+# Fake-product-detection-using-blockchain
+`blockchain-product-verification-react-main-20230425T165036Z-001\blockchain-product-verification-react-main`
 
-1. Go to the `blockchain-product-verification-react-main` <br>
-Make Sure you are in the Main folder : 
+1. for connection Mongodb go to server directory
+   follow steps
+   `  npm install express mongoose cors nodemon`
+2. Go to the `blockchain-product-verification-react-main` <br>
+   Make Sure you are in the Main folder :
+   <br>
 
-``
-blockchain-product-verification-react-main-20230425T165036Z-001\blockchain-product-verification-react-main
-``
-for connection Mongodb go to server directory
-follow steps
-``
-	1. npm install express mongoose cors nodemon
-``
+3. Install the Node_Modules
 
-<br>
-1. Install the Node_Modules
 ```
 npm install
 ```
 
-2. Build The Project
+4. Build The Project
+
 ```
 npm run build
 ```
 
-3. Run The Project
+5. Run The Project
+
 ```
 npm run start
 ```
